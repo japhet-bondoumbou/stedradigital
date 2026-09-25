@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demander un devis — Stedra Digital</title>
+  <meta name="description" content="Configurez votre demande de devis en quelques étapes et envoyez-la directement à Stedra Digital via WhatsApp.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        colors: { primary: '#1E4FD8', navy: '#0A1F44', medium: '#3B82F6', light: '#93C5FD', softgray: '#F8FAFC', darkgray: '#1F2937' },
+        fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] }
+      }}
+    }
+  </script>
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+
+<body data-page="devis" class="bg-white text-slate-800">
+
+  <div id="navbar-container"></div>
+
+  <!-- INTRO -->
+  <section class="relative pt-32 sm:pt-40 pb-10 hero-halo">
+    <div class="max-w-4xl mx-auto px-5 sm:px-6 text-center">
+      <span class="inline-flex items-center gap-2 text-xs font-medium text-primary bg-blue-50 border border-blue-100 px-3 py-1.5 rounded-full">
+        <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+        Demande de devis
+      </span>
+      <h1 class="mt-6 text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-navy leading-[1.1]">
+        Parlons de votre projet.
+      </h1>
+      <p class="mt-5 text-slate-600 leading-relaxed max-w-2xl mx-auto">
+        Répondez à quelques questions pour nous aider à comprendre votre besoin. À la fin, vous enverrez votre demande directement via WhatsApp — aucun compte à créer.
+      </p>
+    </div>
+  </section>
+
+  <!-- APP -->
+  <section id="quoteApp" class="pb-20">
+    <div class="max-w-3xl mx-auto px-5 sm:px-6">
+
+      <!-- Progression -->
+      <div class="grid grid-cols-5 gap-1.5 sm:gap-2 mb-8 mt-6 sm:mt-10">
+        <div data-step-pill="1" class="step-pill active border border-slate-200 rounded-xl py-2.5 text-center text-[11px] sm:text-xs font-medium text-slate-600">
+          <span class="block">1. Service</span>
+        </div>
+        <div data-step-pill="2" class="step-pill border border-slate-200 rounded-xl py-2.5 text-center text-[11px] sm:text-xs font-medium text-slate-600">
+          <span class="block">2. Projet</span>
+        </div>
+        <div data-step-pill="3" class="step-pill border border-slate-200 rounded-xl py-2.5 text-center text-[11px] sm:text-xs font-medium text-slate-600">
+          <span class="block">3. Détails</span>
+        </div>
+        <div data-step-pill="4" class="step-pill border border-slate-200 rounded-xl py-2.5 text-center text-[11px] sm:text-xs font-medium text-slate-600">
+          <span class="block">4. Contact</span>
+        </div>
+        <div data-step-pill="5" class="step-pill border border-slate-200 rounded-xl py-2.5 text-center text-[11px] sm:text-xs font-medium text-slate-600">
+          <span class="block">5. Envoi</span>
+        </div>
+      </div>
+
+      <div class="bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 shadow-sm">
+
+        <!-- ÉTAPE 1 -->
+        <div class="step active" data-step="1">
+          <h2 class="text-xl sm:text-2xl font-bold text-navy tracking-tight mb-2">Quel type de service recherchez-vous ?</h2>
+          <p class="text-sm text-slate-500 mb-6">Choisissez la catégorie qui correspond le mieux à votre besoin.</p>
+          <div id="serviceOptions" class="grid sm:grid-cols-2 gap-3"></div>
+        </div>
+
+        <!-- ÉTAPE 2 -->
+        <div class="step" data-step="2">
+          <h2 class="text-xl sm:text-2xl font-bold text-navy tracking-tight mb-2">Quel type de projet ?</h2>
+          <p class="text-sm text-slate-500 mb-6">Sélectionnez la nature précise de votre demande.</p>
+          <div id="projectTypeOptions" class="grid grid-cols-2 sm:grid-cols-3 gap-2.5"></div>
+        </div>
+
+        <!-- ÉTAPE 3 -->
+        <div class="step" data-step="3">
+          <h2 class="text-xl sm:text-2xl font-bold text-navy tracking-tight mb-2">Détails de votre besoin</h2>
+          <p class="text-sm text-slate-500 mb-6">Plus vous précisez, plus notre proposition sera juste.</p>
+          <div id="detailsFields"></div>
+        </div>
+
+        <!-- ÉTAPE 4 -->
+        <div class="step" data-step="4">
+          <h2 class="text-xl sm:text-2xl font-bold text-navy tracking-tight mb-2">Vos informations</h2>
+          <p class="text-sm text-slate-500 mb-6">Ces informations nous permettront de vous recontacter.</p>
+
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label class="field-label">Nom / prénom <span class="text-red-500">*</span></label>
+              <input id="clientName" type="text" class="field-input" placeholder="Votre nom complet">
+            </div>
+            <div>
+              <label class="field-label">Nom de l'entreprise <span class="text-slate-400">(optionnel)</span></label>
+              <input id="clientCompany" type="text" class="field-input" placeholder="Ex : Ma Société">
+            </div>
+            <div>
+              <label class="field-label">Téléphone / WhatsApp <span class="text-red-500">*</span></label>
+              <input id="clientPhone" type="tel" class="field-input" placeholder="+242 ...">
+            </div>
+            <div>
+              <label class="field-label">Email <span class="text-slate-400">(optionnel)</span></label>
+              <input id="clientEmail" type="email" class="field-input" placeholder="vous@exemple.com">
+            </div>
+            <div class="sm:col-span-2">
+              <label class="field-label">Moyen de contact préféré</label>
+              <select id="clientPreferred" class="field-input">
+                <option value="">-- Sélectionner --</option>
+                <option>WhatsApp</option>
+                <option>Appel téléphonique</option>
+                <option>Email</option>
+              </select>
+            </div>
+            <div class="sm:col-span-2">
+              <label class="field-label">Commentaire supplémentaire <span class="text-slate-400">(optionnel)</span></label>
+              <textarea id="clientComment" rows="3" class="field-input" placeholder="Toute information utile..."></textarea>
+            </div>
+          </div>
+        </div>
+
+        <!-- ÉTAPE 5 -->
+        <div class="step" data-step="5">
+          <h2 class="text-xl sm:text-2xl font-bold text-navy tracking-tight mb-2">Récapitulatif de votre demande</h2>
+          <p class="text-sm text-slate-500 mb-6">Vérifiez les informations avant l'envoi.</p>
+
+          <div id="recapContent"></div>
+
+          <div class="mt-6 flex flex-col sm:flex-row gap-3">
+            <button id="editBtn" type="button" class="inline-flex items-center justify-center gap-2 border border-slate-200 hover:bg-slate-50 text-navy font-medium px-5 py-3 rounded-xl transition">
+              Modifier
+            </button>
+            <button id="sendWhatsapp" type="button" class="inline-flex-1 inline-flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white font-medium px-5 py-3 rounded-xl transition shadow-lg shadow-green-500/20">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.4.5-.5.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1.1 2.8 1.2 3c.1.2 2.1 3.3 5.2 4.6.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.5-.3z"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.4 5L2 22l5.1-1.3c1.5.8 3.1 1.3 4.9 1.3 5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg>
+              Envoyer ma demande sur WhatsApp
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Navigation -->
+      <div class="mt-6 flex items-center justify-between gap-3">
+        <button id="prevBtn" type="button" class="inline-flex items-center gap-2 border border-slate-200 hover:bg-slate-50 text-navy font-medium px-5 py-3 rounded-xl transition">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+          Précédent
+        </button>
+        <button id="nextBtn" type="button" class="inline-flex items-center gap-2 bg-navy hover:bg-primary text-white font-medium px-5 py-3 rounded-xl transition shadow-sm">
+          Suivant
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <div id="footer-container"></div>
+
+  <script src="js/main.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/quotation.js"></script>
+</body>
+</html>

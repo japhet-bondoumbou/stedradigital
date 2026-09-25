@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio — Stedra Digital | Projets Web, Mobile, Design, Vidéo</title>
+  <meta name="description" content="Découvrez une sélection de projets, concepts et explorations réalisés par Stedra Digital : web, mobile, design, vidéo et marketing.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        colors: { primary: '#1E4FD8', navy: '#0A1F44', medium: '#3B82F6', light: '#93C5FD', softgray: '#F8FAFC', darkgray: '#1F2937' },
+        fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] }
+      }}
+    }
+  </script>
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+
+<body data-page="portfolio" class="bg-white text-slate-800">
+
+  <div id="navbar-container"></div>
+
+  <!-- HERO -->
+  <section class="relative pt-32 sm:pt-40 pb-12 sm:pb-16 hero-halo">
+    <div class="max-w-7xl mx-auto px-5 sm:px-6">
+      <div class="max-w-2xl">
+        <span class="inline-flex items-center gap-2 text-xs font-medium text-primary bg-blue-50 border border-blue-100 px-3 py-1.5 rounded-full">
+          <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+          Portfolio
+        </span>
+        <h1 class="mt-6 text-4xl sm:text-5xl font-extrabold tracking-tight text-navy leading-[1.05]">
+          Projets, concepts et explorations.
+        </h1>
+        <p class="mt-5 text-base sm:text-lg text-slate-600 leading-relaxed max-w-xl">
+          Une sélection de réalisations, prototypes et travaux personnels illustrant notre approche du web, du design, du contenu et de la vidéo.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FILTRES -->
+  <section class="mt-8 pb-8">
+    <div class="max-w-7xl mx-auto px-5 sm:px-6">
+      <div class="bg-white border border-slate-200 rounded-2xl p-4 sm:p-5 shadow-sm">
+        <div class="relative mb-4">
+          <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="17" y2="17"/></svg>
+          <input id="projectSearchInput" type="search" placeholder="Rechercher un projet..." aria-label="Rechercher un projet" class="w-full pl-11 pr-4 py-3 rounded-xl border border-slate-200 text-sm focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition">
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <button data-project-filter="all" class="text-xs sm:text-sm font-medium px-4 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-600 hover:bg-slate-50 transition">Tous</button>
+          <button data-project-filter="web" class="text-xs sm:text-sm font-medium px-4 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-600 hover:bg-slate-50 transition">Web</button>
+          <button data-project-filter="mobile" class="text-xs sm:text-sm font-medium px-4 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-600 hover:bg-slate-50 transition">Mobile</button>
+          <button data-project-filter="design" class="text-xs sm:text-sm font-medium px-4 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-600 hover:bg-slate-50 transition">Design</button>
+          <button data-project-filter="video" class="text-xs sm:text-sm font-medium px-4 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-600 hover:bg-slate-50 transition">Vidéo</button>
+          <button data-project-filter="marketing" class="text-xs sm:text-sm font-medium px-4 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-600 hover:bg-slate-50 transition">Marketing</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GRILLE PROJETS -->
+  <section class="pb-20">
+    <div class="max-w-7xl mx-auto px-5 sm:px-6">
+      <div id="projectsGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="px-5 sm:px-6 py-20 sm:py-24 bg-softgray border-t border-slate-100">
+    <div class="max-w-7xl mx-auto">
+      <div class="relative gradient-navy rounded-3xl overflow-hidden px-6 sm:px-14 py-16 sm:py-20 cta-visual-shell">
+        <div class="absolute inset-0 dot-grid opacity-10"></div>
+        <div class="absolute -top-24 -right-24 w-64 h-64 rounded-full bg-primary/30 blur-3xl"></div>
+
+        <div class="cta-molecule" aria-hidden="true">
+          <span class="molecule-node molecule-node-1"></span>
+          <span class="molecule-node molecule-node-2"></span>
+          <span class="molecule-node molecule-node-3"></span>
+          <span class="molecule-node molecule-node-4"></span>
+          <span class="molecule-node molecule-node-5"></span>
+          <span class="molecule-core"></span>
+        </div>
+
+        <div class="relative max-w-2xl">
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-tight">Envie de voir votre projet ici ?</h2>
+          <p class="mt-5 text-slate-300 leading-relaxed">Racontez-nous votre idée. Nous vous accompagnons de la conception à la réalisation.</p>
+          <a href="devis.html" class="mt-8 inline-flex items-center gap-2 bg-white text-navy hover:bg-blue-50 font-medium px-6 py-3.5 rounded-xl transition shadow-lg">
+            Demander un devis
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-container"></div>
+
+  <script src="js/main.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/portfolio.js"></script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<header class="fixed top-3 sm:top-4 left-0 right-0 z-50 px-3 sm:px-4">
+  <nav data-navbar class="max-w-7xl mx-auto bg-white/85 backdrop-blur-xl border border-slate-200/80 rounded-2xl shadow-[0_8px_30px_rgba(15,23,42,0.06)]">
+    <div class="flex items-center justify-between md:grid md:grid-cols-[1fr_auto_1fr] md:gap-4 px-4 sm:px-6 py-2.5">
+      <a href="index.html" class="flex items-center gap-3 md:justify-self-start">
+        <span class="w-11 h-11 md:w-14 md:h-14 shrink-0 rounded-2xl bg-white border border-slate-200/80 shadow-sm p-1.5 flex items-center justify-center">
+          <img src="assets/images/Logo.png" alt="Logo Stedra Digital" class="w-full h-full object-contain rounded-xl">
+        </span>
+        <span class="font-semibold md:font-bold text-navy tracking-tight text-base md:text-lg leading-none">Stedra <span class="text-primary">Digital</span></span>
+      </a>
+
+      <ul class="hidden md:flex items-center justify-self-center gap-2.5 text-sm text-slate-600">
+        <li><a href="index.html" data-nav="index" class="px-3.5 py-2 rounded-xl font-medium tracking-[0.01em] hover:text-navy hover:bg-slate-50 transition duration-200">Accueil</a></li>
+        <li><a href="services.html" data-nav="services" class="px-3.5 py-2 rounded-xl font-medium tracking-[0.01em] hover:text-navy hover:bg-slate-50 transition duration-200">Services</a></li>
+        <li><a href="portfolio.html" data-nav="portfolio" class="px-3.5 py-2 rounded-xl font-medium tracking-[0.01em] hover:text-navy hover:bg-slate-50 transition duration-200">Portfolio</a></li>
+        <li><a href="about.html" data-nav="about" class="px-3.5 py-2 rounded-xl font-medium tracking-[0.01em] hover:text-navy hover:bg-slate-50 transition duration-200">À propos</a></li>
+      </ul>
+
+      <div class="flex items-center gap-2 md:justify-self-end">
+        <a href="devis.html" data-nav="devis" class="hidden sm:inline-flex items-center gap-1.5 bg-primary hover:bg-navy focus-visible:ring-2 focus-visible:ring-primary/40 text-white text-sm font-semibold px-5 py-2.5 rounded-xl transition duration-200 shadow-sm">
+          Demander un devis
+        </a>
+        <button id="menuBtn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu" class="md:hidden w-10 h-10 rounded-xl border border-slate-200 flex items-center justify-center text-navy">
+          <svg id="iconOpen" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+          <svg id="iconClose" class="w-5 h-5 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobileMenu" class="md:hidden border-t border-slate-200/80 px-4">
+      <ul class="flex flex-col gap-1.5 text-sm py-3">
+        <li><a href="index.html" data-nav="index" class="block px-3.5 py-3 rounded-xl font-medium hover:bg-slate-50 hover:text-navy transition duration-200 text-slate-600">Accueil</a></li>
+        <li><a href="services.html" data-nav="services" class="block px-3.5 py-3 rounded-xl font-medium hover:bg-slate-50 hover:text-navy transition duration-200 text-slate-600">Services</a></li>
+        <li><a href="portfolio.html" data-nav="portfolio" class="block px-3.5 py-3 rounded-xl font-medium hover:bg-slate-50 hover:text-navy transition duration-200 text-slate-600">Portfolio</a></li>
+        <li><a href="about.html" data-nav="about" class="block px-3.5 py-3 rounded-xl font-medium hover:bg-slate-50 hover:text-navy transition duration-200 text-slate-600">À propos</a></li>
+      </ul>
+      <a href="devis.html" data-nav="devis" class="mb-4 w-full inline-flex justify-center bg-navy text-white px-4 py-3 rounded-xl text-sm font-medium transition hover:bg-primary">Demander un devis</a>
+    </div>
+  </nav>
+</header>
