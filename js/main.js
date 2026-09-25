@@ -7,7 +7,7 @@ const SITE_CONFIG = {
   name: 'Stedra Digital',
   slogan: 'Donnons vie à vos idées numériques.',
   whatsappDisplay: '+242 05 0233797',
-  whatsappNumber: '242500233797',
+  whatsappNumber: '242050233797',
   email: 'stedradigital@gmail.com',
   social: {
     tiktok: 'YOUR_TIKTOK_URL',
