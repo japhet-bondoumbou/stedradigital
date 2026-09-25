@@ -78,7 +78,45 @@ function setupNavbarScrollEffect() {
   onScroll();
 }
 
+function setupSiteLoader() {
+  const existing = document.getElementById('site-loader');
+  if (existing) return;
+
+  const loader = document.createElement('div');
+  loader.id = 'site-loader';
+  loader.setAttribute('aria-live', 'polite');
+  loader.setAttribute('aria-busy', 'true');
+  loader.innerHTML = `
+    <div class="loader-shell">
+      <div class="loader-logo-wrap">
+        <img src="assets/images/Logo.png" alt="Logo Stedra Digital" class="loader-logo">
+      </div>
+      <div class="loader-text-block">
+        <span class="loader-kicker">Stedra Digital</span>
+        <span class="loader-subtitle">Préparation du studio</span>
+      </div>
+      <div class="loader-progress" aria-hidden="true">
+        <span class="loader-bar"></span>
+      </div>
+    </div>
+  `;
+
+  document.body.prepend(loader);
+
+  const hideLoader = () => {
+    loader.classList.add('is-hidden');
+    setTimeout(() => loader.remove(), 500);
+  };
+
+  if (document.readyState === 'complete') {
+    setTimeout(hideLoader, 500);
+  } else {
+    window.addEventListener('load', () => setTimeout(hideLoader, 500), { once: true });
+  }
+}
+
 function initializeGlobalSite() {
+  setupSiteLoader();
   setupSocialLinks();
   setupWhatsAppLinks();
   setupCurrentYear();
@@ -87,3 +125,9 @@ function initializeGlobalSite() {
 }
 
 window.initGlobalSite = initializeGlobalSite;
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initializeGlobalSite, { once: true });
+} else {
+  initializeGlobalSite();
+}
