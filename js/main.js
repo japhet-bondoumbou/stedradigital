@@ -11,7 +11,7 @@ const SITE_CONFIG = {
   email: 'stedradigital@gmail.com',
   social: {
     tiktok: 'YOUR_TIKTOK_URL',
-    facebook: 'YOUR_FACEBOOK_URL',
+    facebook: 'https://www.facebook.com/share/1U8yjmBXEk/',
     instagram: 'YOUR_INSTAGRAM_URL',
     youtube: 'YOUR_YOUTUBE_URL',
     whatsappChannel: 'YOUR_WHATSAPP_CHANNEL_URL'
